@@ -14,6 +14,8 @@
   --soft-pill-border: rgba(255, 255, 255, 0.78);
   --shadow-main: 0 24px 60px rgba(81, 154, 198, 0.16);
   --shadow-soft: 0 10px 26px rgba(81, 154, 198, 0.12);
+  --unlock-glow: 0 0 0 rgba(103, 199, 255, 0);
+  --unlock-glow-active: 0 0 0 8px rgba(103, 199, 255, 0.08);
 }
 
 * {
@@ -209,6 +211,28 @@ button {
   50% { transform: translateY(-10px); }
 }
 
+@keyframes revealUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 12px 24px rgba(74, 168, 222, 0.22);
+    transform: translateY(0);
+  }
+  50% {
+    box-shadow: 0 16px 30px rgba(74, 168, 222, 0.35);
+    transform: translateY(-1px);
+  }
+}
+
 .app {
   position: relative;
   z-index: 1;
@@ -269,7 +293,7 @@ button {
 .next-button {
   border-radius: 999px;
   cursor: pointer;
-  transition: transform 0.18s ease, filter 0.18s ease;
+  transition: transform 0.18s ease, filter 0.18s ease, box-shadow 0.2s ease, opacity 0.2s ease;
 }
 
 .start-button {
@@ -340,7 +364,13 @@ button {
 }
 
 .step-card {
-  margin-bottom: 14px;
+  position: relative;
+  z-index: 0;
+  margin-bottom: 22px;
+}
+
+.step-card.reveal {
+  animation: revealUp 0.5s ease both;
 }
 
 .step-toggle {
@@ -361,6 +391,11 @@ button {
   box-shadow: var(--shadow-soft);
   -webkit-appearance: none;
   appearance: none;
+  transition: transform 0.18s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.step-toggle[aria-expanded="true"] {
+  background: rgba(255, 255, 255, 0.72);
 }
 
 .toggle-plus {
@@ -374,9 +409,12 @@ button {
   color: var(--blue-main);
   font-size: 1.3rem;
   font-weight: 500;
+  transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .step-panel {
+  position: relative;
+  z-index: 1;
   max-height: 0;
   overflow: hidden;
   padding: 0 10px;
@@ -386,6 +424,7 @@ button {
 .step-panel.open {
   margin-top: 10px;
   padding: 18px;
+  padding-bottom: 28px;
   background: rgba(255, 255, 255, 0.42);
   border: 1px solid rgba(255, 255, 255, 0.7);
   border-radius: 24px;
@@ -404,13 +443,26 @@ button {
 }
 
 .next-button {
-  margin-top: 12px;
-  padding: 14px 18px;
+  margin-top: 20px;
+  padding: 14px 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  max-width: 100%;
   background: linear-gradient(180deg, #7eceff, #a8e1ff);
   color: white;
   font-size: 0.98rem;
   font-weight: 600;
   box-shadow: 0 12px 24px rgba(74, 168, 222, 0.22);
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+.next-button:disabled {
+  animation: none;
+  opacity: 0.72;
+  cursor: default;
+  transform: none;
 }
 
 .language-card {
@@ -419,6 +471,7 @@ button {
   border-radius: 24px;
   box-shadow: var(--shadow-soft);
   padding: 18px;
+  animation: revealUp 0.5s ease both;
 }
 
 .language-grid {
@@ -489,6 +542,10 @@ button {
     padding: 22px 14px 18px;
   }
 
+  .step-card {
+    margin-bottom: 22px;
+  }
+
   .step-toggle {
     padding: 16px 16px;
     font-size: 0.98rem;
@@ -496,6 +553,14 @@ button {
 
   .step-panel.open {
     padding: 16px;
+    padding-bottom: 26px;
+  }
+
+  .next-button {
+    margin-top: 18px;
+    font-size: 0.94rem;
+    white-space: normal;
+    text-align: center;
   }
 
   .language-card {
