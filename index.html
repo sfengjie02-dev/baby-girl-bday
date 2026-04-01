@@ -7,48 +7,54 @@
     name="description"
     content="A soft interactive birthday love letter for my baby girl."
   />
-  <title>For my Baby Girl ❤️</title>
+  <title>For My Baby Girl ❤️</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Baloo+2:wght@600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   />
 
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-  <div class="sky-decor" aria-hidden="true">
+  <div class="background-scene" aria-hidden="true">
+    <div class="sun-glow"></div>
+
     <div class="cloud cloud-1"></div>
     <div class="cloud cloud-2"></div>
     <div class="cloud cloud-3"></div>
-    <div class="star star-1">✦</div>
-    <div class="star star-2">✦</div>
-    <div class="star star-3">✦</div>
-    <div class="heart heart-1">💙</div>
-    <div class="heart heart-2">🤍</div>
+    <div class="cloud cloud-4"></div>
+
+    <div class="blob blob-blue"></div>
+    <div class="blob blob-cream"></div>
+    <div class="blob blob-white"></div>
+
+    <div class="floaty floaty-1">💙</div>
+    <div class="floaty floaty-2">☁️</div>
+    <div class="floaty floaty-3">✨</div>
+    <div class="floaty floaty-4">🩵</div>
+    <div class="floaty floaty-5">🎀</div>
   </div>
 
-  <main class="page-shell">
-    <section id="introPage" class="screen active-screen">
-      <div class="card intro-card">
-        <p class="tiny-label">🏷 Title</p>
-        <h1 class="main-title">For my Baby Girl ❤️</h1>
-        <p class="subtitle">Take your time and read this</p>
+  <main class="app">
+    <section id="landingPage" class="page landing-page">
+      <div class="landing-content">
+        <p class="mini-text">for my favourite girl ever</p>
+        <h1 class="main-title">For My Baby Girl ❤️</h1>
+        <p class="main-subtitle">Take your time and read this</p>
 
-        <div class="intro-actions">
-          <button id="startBtn" class="main-btn" type="button">
-            Open your letter 💌
-          </button>
-        </div>
+        <button id="startBtn" class="start-button" type="button">
+          Open your letter 💌
+        </button>
       </div>
     </section>
 
-    <section id="letterPage" class="screen hidden-screen">
-      <div class="card letter-card">
+    <section id="letterPage" class="page letter-page is-hidden">
+      <div class="letter-card">
         <header class="letter-header">
-          <p class="tiny-label">💬 Opening Line</p>
+          <p class="section-label">💬 Opening Line</p>
           <h2 class="opening-title">Hi you…</h2>
           <p class="opening-text">
             and no, you’re not allowed to speedrun this 😤
@@ -56,82 +62,79 @@
           <p class="opening-text">Take your time okay.</p>
         </header>
 
-        <div class="divider"></div>
+        <div class="section-divider"></div>
 
-        <section class="toggles-section" aria-label="Interactive love letter toggles">
-          <article class="toggle-item">
+        <section class="toggle-list" aria-label="Love letter sections">
+          <article class="toggle-card">
             <button
-              class="toggle-btn"
+              class="toggle-button"
               type="button"
-              onclick="toggleContent('toggle1', this)"
               aria-expanded="false"
-              aria-controls="toggle1"
+              aria-controls="content-1"
+              onclick="toggleContent('content-1', this)"
             >
               <span>Click this if it’s your birthday gurlll 😌</span>
-              <span class="toggle-icon">+</span>
+              <span class="toggle-plus">+</span>
             </button>
-            <div class="toggle-content" id="toggle1">
+            <div class="toggle-content" id="content-1">
               <p>Okay good, at least you clicked the right one.</p>
               <p>Happy Birthday, my favourite person 💙</p>
             </div>
           </article>
 
-          <article class="toggle-item">
+          <article class="toggle-card">
             <button
-              class="toggle-btn"
+              class="toggle-button"
               type="button"
-              onclick="toggleContent('toggle2', this)"
               aria-expanded="false"
-              aria-controls="toggle2"
+              aria-controls="content-2"
+              onclick="toggleContent('content-2', this)"
             >
               <span>Don’t click this seriously</span>
-              <span class="toggle-icon">+</span>
+              <span class="toggle-plus">+</span>
             </button>
-            <div class="toggle-content" id="toggle2">
+            <div class="toggle-content" id="content-2">
               <p>You really never listen oneeee 😤</p>
               <p>very bad girl.</p>
-              <p>…but it’s okay, I love that about you too 💙</p>
+              <p>…but it’s okay,</p>
+              <p>I love that about you too 💙</p>
             </div>
           </article>
 
-          <article class="toggle-item">
+          <article class="toggle-card">
             <button
-              class="toggle-btn"
+              class="toggle-button"
               type="button"
-              onclick="toggleContent('toggle3', this)"
               aria-expanded="false"
-              aria-controls="toggle3"
+              aria-controls="content-3"
+              onclick="toggleContent('content-3', this)"
             >
               <span>Okay this one you should read properly</span>
-              <span class="toggle-icon">+</span>
+              <span class="toggle-plus">+</span>
             </button>
-            <div class="toggle-content" id="toggle3">
+            <div class="toggle-content" id="content-3">
               <p>I didn’t want to just write you a normal letter this time…</p>
               <p>I wanted to make something you could go through, slowly.</p>
               <p>Just like us.</p>
-              <p>
-                Soft, a little messy sometimes, but still my favourite thing.
-              </p>
+              <p>Soft, a little messy sometimes, but still my favourite thing.</p>
             </div>
           </article>
 
-          <article class="toggle-item">
+          <article class="toggle-card">
             <button
-              class="toggle-btn"
+              class="toggle-button"
               type="button"
-              onclick="toggleContent('toggle4', this)"
               aria-expanded="false"
-              aria-controls="toggle4"
+              aria-controls="content-4"
+              onclick="toggleContent('content-4', this)"
             >
               <span>Something I really want you to know 💌</span>
-              <span class="toggle-icon">+</span>
+              <span class="toggle-plus">+</span>
             </button>
-            <div class="toggle-content" id="toggle4">
+            <div class="toggle-content" id="content-4">
               <p>I love you more than I can ever say or express.</p>
-              <p>
-                Honestly… you’re the best thing that has ever happened to me.
-                You make me the luckiest man alive.
-              </p>
+              <p>Honestly… you’re the best thing that has ever happened to me.</p>
+              <p>You make me the luckiest man alive.</p>
               <p>
                 I’ll always strive to make you happy and treat you the bestest—
                 just like how a princess should be treated 💙
@@ -139,48 +142,66 @@
             </div>
           </article>
 
-          <article class="toggle-item language-item">
-            <div class="language-box">
-              <h3>💌 In every language, it’s still you</h3>
-              <ul class="language-list">
-                <li><strong>English 🇬🇧</strong><span>I love you</span></li>
-                <li><strong>Chinese 🇨🇳</strong><span>我爱你</span></li>
-                <li><strong>Japanese 🇯🇵</strong><span>愛してる</span></li>
-                <li><strong>French 🇫🇷</strong><span>Je t’aime</span></li>
-                <li><strong>Korean 🇰🇷</strong><span>사랑해</span></li>
-              </ul>
+          <article class="language-card">
+            <p class="section-label">💌 In every language, it’s still you</p>
+
+            <div class="language-grid">
+              <div class="language-item">
+                <strong>English 🇬🇧</strong>
+                <span>I love you</span>
+              </div>
+
+              <div class="language-item">
+                <strong>Chinese 🇨🇳</strong>
+                <span>我爱你</span>
+              </div>
+
+              <div class="language-item">
+                <strong>Japanese 🇯🇵</strong>
+                <span>愛してる</span>
+              </div>
+
+              <div class="language-item">
+                <strong>French 🇫🇷</strong>
+                <span>Je t’aime</span>
+              </div>
+
+              <div class="language-item">
+                <strong>Korean 🇰🇷</strong>
+                <span>사랑해</span>
+              </div>
             </div>
           </article>
 
-          <article class="toggle-item">
+          <article class="toggle-card">
             <button
-              class="toggle-btn"
+              class="toggle-button"
               type="button"
-              onclick="toggleContent('toggle5', this)"
               aria-expanded="false"
-              aria-controls="toggle5"
+              aria-controls="content-5"
+              onclick="toggleContent('content-5', this)"
             >
               <span>If you’re smiling right now… click this 😊</span>
-              <span class="toggle-icon">+</span>
+              <span class="toggle-plus">+</span>
             </button>
-            <div class="toggle-content" id="toggle5">
+            <div class="toggle-content" id="content-5">
               <p>Good.</p>
               <p>That’s all I wanted today.</p>
             </div>
           </article>
 
-          <article class="toggle-item final-item">
+          <article class="toggle-card final-card">
             <button
-              class="toggle-btn final-btn"
+              class="toggle-button"
               type="button"
-              onclick="toggleContent('toggle6', this)"
               aria-expanded="false"
-              aria-controls="toggle6"
+              aria-controls="content-6"
+              onclick="toggleContent('content-6', this)"
             >
               <span>Last one… promise 🎀</span>
-              <span class="toggle-icon">+</span>
+              <span class="toggle-plus">+</span>
             </button>
-            <div class="toggle-content final-message" id="toggle6">
+            <div class="toggle-content" id="content-6">
               <p>No matter how many birthdays pass,</p>
               <p>no matter where life takes us…</p>
               <p>if I had to choose again,</p>
