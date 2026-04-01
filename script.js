@@ -20,7 +20,7 @@ if (startBtn && landingPage && storyFlow) {
   });
 }
 
-function openStep(panelId, button) {
+function togglePanel(panelId, button) {
   const panel = document.getElementById(panelId);
   if (!panel || !button) return;
 
@@ -29,12 +29,10 @@ function openStep(panelId, button) {
 
   if (isOpen) {
     panel.classList.remove("open");
-    panel.style.maxHeight = null;
     button.setAttribute("aria-expanded", "false");
     if (plus) plus.textContent = "+";
   } else {
     panel.classList.add("open");
-    panel.style.maxHeight = panel.scrollHeight + "px";
     button.setAttribute("aria-expanded", "true");
     if (plus) plus.textContent = "–";
   }
