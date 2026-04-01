@@ -1,14 +1,11 @@
 const startBtn = document.getElementById("startBtn");
-const introPage = document.getElementById("introPage");
+const landingPage = document.getElementById("landingPage");
 const letterPage = document.getElementById("letterPage");
 
-if (startBtn && introPage && letterPage) {
+if (startBtn && landingPage && letterPage) {
   startBtn.addEventListener("click", () => {
-    introPage.classList.remove("active-screen");
-    introPage.classList.add("hidden-screen");
-
-    letterPage.classList.remove("hidden-screen");
-    letterPage.classList.add("active-screen");
+    landingPage.classList.add("is-hidden");
+    letterPage.classList.remove("is-hidden");
 
     window.scrollTo({
       top: 0,
@@ -22,17 +19,29 @@ function toggleContent(contentId, button) {
   if (!content) return;
 
   const isOpen = content.classList.contains("open");
-  const icon = button ? button.querySelector(".toggle-icon") : null;
+  const plus = button ? button.querySelector(".toggle-plus") : null;
 
   if (isOpen) {
     content.classList.remove("open");
     content.style.maxHeight = null;
-    if (button) button.setAttribute("aria-expanded", "false");
-    if (icon) icon.textContent = "+";
+
+    if (button) {
+      button.setAttribute("aria-expanded", "false");
+    }
+
+    if (plus) {
+      plus.textContent = "+";
+    }
   } else {
     content.classList.add("open");
     content.style.maxHeight = content.scrollHeight + "px";
-    if (button) button.setAttribute("aria-expanded", "true");
-    if (icon) icon.textContent = "–";
+
+    if (button) {
+      button.setAttribute("aria-expanded", "true");
+    }
+
+    if (plus) {
+      plus.textContent = "–";
+    }
   }
 }
