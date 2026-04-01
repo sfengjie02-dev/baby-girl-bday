@@ -3,10 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta
-    name="description"
-    content="A soft interactive birthday love letter for my baby girl."
-  />
+  <meta name="description" content="A soft interactive birthday love letter for my baby girl." />
   <title>For My Baby Girl ❤️</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -39,110 +36,97 @@
   </div>
 
   <main class="app">
-    <section id="landingPage" class="page landing-page">
+    <section class="page landing-page">
       <div class="landing-content">
         <p class="mini-text">for my favourite girl ever</p>
         <h1 class="main-title">For My Baby Girl ❤️</h1>
         <p class="main-subtitle">Take your time and read this</p>
 
         <button id="startBtn" class="start-button" type="button">
-          Open your letter 💌
+          okay princess, start here 💌
         </button>
       </div>
     </section>
 
-    <section id="letterPage" class="page letter-page is-hidden">
-      <div class="letter-card">
-        <header class="letter-header">
+    <section id="storyFlow" class="story-flow is-hidden">
+      <div class="story-card">
+        <header class="story-header">
           <p class="section-label">💬 Opening Line</p>
           <h2 class="opening-title">Hi you…</h2>
-          <p class="opening-text">
-            and no, you’re not allowed to speedrun this 😤
-          </p>
+          <p class="opening-text">and no, you’re not allowed to speedrun this 😤</p>
           <p class="opening-text">Take your time okay.</p>
         </header>
 
         <div class="section-divider"></div>
 
-        <section class="toggle-list" aria-label="Love letter sections">
-          <article class="toggle-card">
-            <button
-              class="toggle-button"
-              type="button"
-              aria-expanded="false"
-              aria-controls="content-1"
-              onclick="toggleContent('content-1', this)"
-            >
-              <span>Click this if it’s your birthday gurlll 😌</span>
-              <span class="toggle-plus">+</span>
-            </button>
-            <div class="toggle-content" id="content-1">
-              <p>Okay good, at least you clicked the right one.</p>
-              <p>Happy Birthday, my favourite person 💙</p>
-            </div>
-          </article>
+        <div class="step-card is-hidden" id="step-1">
+          <button class="step-toggle" type="button" onclick="openStep('panel-1', this)">
+            <span>Click this if it’s your birthday gurlll 😌</span>
+            <span class="toggle-plus">+</span>
+          </button>
+          <div class="step-panel" id="panel-1">
+            <p>Okay good, at least you clicked the right one.</p>
+            <p>Happy Birthday, my favourite person 💙</p>
 
-          <article class="toggle-card">
-            <button
-              class="toggle-button"
-              type="button"
-              aria-expanded="false"
-              aria-controls="content-2"
-              onclick="toggleContent('content-2', this)"
-            >
-              <span>Don’t click this seriously</span>
-              <span class="toggle-plus">+</span>
+            <button class="next-button" type="button" onclick="showNextStep(2, this)">
+              fineee, you can keep going 🙄💙
             </button>
-            <div class="toggle-content" id="content-2">
-              <p>You really never listen oneeee 😤</p>
-              <p>very bad girl.</p>
-              <p>…but it’s okay,</p>
-              <p>I love that about you too 💙</p>
-            </div>
-          </article>
+          </div>
+        </div>
 
-          <article class="toggle-card">
-            <button
-              class="toggle-button"
-              type="button"
-              aria-expanded="false"
-              aria-controls="content-3"
-              onclick="toggleContent('content-3', this)"
-            >
-              <span>Okay this one you should read properly</span>
-              <span class="toggle-plus">+</span>
+        <div class="step-card is-hidden" id="step-2">
+          <button class="step-toggle" type="button" onclick="openStep('panel-2', this)">
+            <span>Don’t click this seriously</span>
+            <span class="toggle-plus">+</span>
+          </button>
+          <div class="step-panel" id="panel-2">
+            <p>You really never listen oneeee 😤</p>
+            <p>very bad girl.</p>
+            <p>…but it’s okay,</p>
+            <p>I love that about you too 💙</p>
+
+            <button class="next-button" type="button" onclick="showNextStep(3, this)">
+              alright troublemaker, next one 😭
             </button>
-            <div class="toggle-content" id="content-3">
-              <p>I didn’t want to just write you a normal letter this time…</p>
-              <p>I wanted to make something you could go through, slowly.</p>
-              <p>Just like us.</p>
-              <p>Soft, a little messy sometimes, but still my favourite thing.</p>
-            </div>
-          </article>
+          </div>
+        </div>
 
-          <article class="toggle-card">
-            <button
-              class="toggle-button"
-              type="button"
-              aria-expanded="false"
-              aria-controls="content-4"
-              onclick="toggleContent('content-4', this)"
-            >
-              <span>Something I really want you to know 💌</span>
-              <span class="toggle-plus">+</span>
+        <div class="step-card is-hidden" id="step-3">
+          <button class="step-toggle" type="button" onclick="openStep('panel-3', this)">
+            <span>Okay this one you should read properly</span>
+            <span class="toggle-plus">+</span>
+          </button>
+          <div class="step-panel" id="panel-3">
+            <p>I didn’t want to just write you a normal letter this time…</p>
+            <p>I wanted to make something you could go through, slowly.</p>
+            <p>Just like us.</p>
+            <p>Soft, a little messy sometimes, but still my favourite thing.</p>
+
+            <button class="next-button" type="button" onclick="showNextStep(4, this)">
+              pookies proceed button unlocked ✨
             </button>
-            <div class="toggle-content" id="content-4">
-              <p>I love you more than I can ever say or express.</p>
-              <p>Honestly… you’re the best thing that has ever happened to me.</p>
-              <p>You make me the luckiest man alive.</p>
-              <p>
-                I’ll always strive to make you happy and treat you the bestest—
-                just like how a princess should be treated 💙
-              </p>
-            </div>
-          </article>
+          </div>
+        </div>
 
-          <article class="language-card">
+        <div class="step-card is-hidden" id="step-4">
+          <button class="step-toggle" type="button" onclick="openStep('panel-4', this)">
+            <span>Something I really want you to know 💌</span>
+            <span class="toggle-plus">+</span>
+          </button>
+          <div class="step-panel" id="panel-4">
+            <p>I love you more than I can ever say or express.</p>
+            <p>Honestly… you’re the best thing that has ever happened to me.</p>
+            <p>You make me the luckiest man alive.</p>
+            <p>I’ll always strive to make you happy and treat you the bestest— just like how a princess should be treated 💙</p>
+
+            <button class="next-button" type="button" onclick="showNextStep(5, this)">
+              okay diva, one more soft bit 💌
+            </button>
+          </div>
+        </div>
+
+        <div class="step-card is-hidden" id="step-5">
+          <div class="language-card">
             <p class="section-label">💌 In every language, it’s still you</p>
 
             <div class="language-grid">
@@ -150,74 +134,64 @@
                 <strong>English 🇬🇧</strong>
                 <span>I love you</span>
               </div>
-
               <div class="language-item">
                 <strong>Chinese 🇨🇳</strong>
                 <span>我爱你</span>
               </div>
-
               <div class="language-item">
                 <strong>Japanese 🇯🇵</strong>
                 <span>愛してる</span>
               </div>
-
               <div class="language-item">
                 <strong>French 🇫🇷</strong>
                 <span>Je t’aime</span>
               </div>
-
               <div class="language-item">
                 <strong>Korean 🇰🇷</strong>
                 <span>사랑해</span>
               </div>
             </div>
-          </article>
 
-          <article class="toggle-card">
-            <button
-              class="toggle-button"
-              type="button"
-              aria-expanded="false"
-              aria-controls="content-5"
-              onclick="toggleContent('content-5', this)"
-            >
-              <span>If you’re smiling right now… click this 😊</span>
-              <span class="toggle-plus">+</span>
+            <button class="next-button" type="button" onclick="showNextStep(6, this)">
+              yes yes keep reading cutie 😌
             </button>
-            <div class="toggle-content" id="content-5">
-              <p>Good.</p>
-              <p>That’s all I wanted today.</p>
-            </div>
-          </article>
+          </div>
+        </div>
 
-          <article class="toggle-card final-card">
-            <button
-              class="toggle-button"
-              type="button"
-              aria-expanded="false"
-              aria-controls="content-6"
-              onclick="toggleContent('content-6', this)"
-            >
-              <span>Last one… promise 🎀</span>
-              <span class="toggle-plus">+</span>
+        <div class="step-card is-hidden" id="step-6">
+          <button class="step-toggle" type="button" onclick="openStep('panel-6', this)">
+            <span>If you’re smiling right now… click this 😊</span>
+            <span class="toggle-plus">+</span>
+          </button>
+          <div class="step-panel" id="panel-6">
+            <p>Good.</p>
+            <p>That’s all I wanted today.</p>
+
+            <button class="next-button" type="button" onclick="showNextStep(7, this)">
+              last one fr fr no scam 🎀
             </button>
-            <div class="toggle-content" id="content-6">
-              <p>No matter how many birthdays pass,</p>
-              <p>no matter where life takes us…</p>
-              <p>if I had to choose again,</p>
-              <p>I’d still choose you.</p>
-              <p>Every time.</p>
-              <p><strong>Happy Birthday, my girl 💙</strong></p>
-            </div>
-          </article>
-        </section>
+          </div>
+        </div>
+
+        <div class="step-card is-hidden final-card" id="step-7">
+          <button class="step-toggle" type="button" onclick="openStep('panel-7', this)">
+            <span>Last one… promise 🎀</span>
+            <span class="toggle-plus">+</span>
+          </button>
+          <div class="step-panel" id="panel-7">
+            <p>No matter how many birthdays pass,</p>
+            <p>no matter where life takes us…</p>
+            <p>if I had to choose again,</p>
+            <p>I’d still choose you.</p>
+            <p>Every time.</p>
+            <p><strong>Happy Birthday, my girl 💙</strong></p>
+          </div>
+        </div>
 
         <footer class="letter-footer">
-          <pre class="bunny">
-(\_/)
+          <pre class="bunny">(\_/)
 ( •.•)
-/&gt;❤️
-          </pre>
+/&gt;❤️</pre>
         </footer>
       </div>
     </section>
