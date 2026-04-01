@@ -1,103 +1,207 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="A soft interactive birthday love letter for my baby girl."
+  />
+  <title>For my Baby Girl ❤️</title>
 
-<meta charset="utf-8" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Baloo+2:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
 
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-
-<title>For My Baby Girl &lt;3</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="./styles.css" />
-
+  <link rel="stylesheet" href="./style.css" />
 </head>
-
 <body>
+  <div class="sky-decor" aria-hidden="true">
+    <div class="cloud cloud-1"></div>
+    <div class="cloud cloud-2"></div>
+    <div class="cloud cloud-3"></div>
+    <div class="star star-1">✦</div>
+    <div class="star star-2">✦</div>
+    <div class="star star-3">✦</div>
+    <div class="heart heart-1">💙</div>
+    <div class="heart heart-2">🤍</div>
+  </div>
 
-<div class="bg-glow"></div>
+  <main class="page-shell">
+    <section id="introPage" class="screen active-screen">
+      <div class="card intro-card">
+        <p class="tiny-label">🏷 Title</p>
+        <h1 class="main-title">For my Baby Girl ❤️</h1>
+        <p class="subtitle">Take your time and read this</p>
 
-<div class="bg-game" aria-hidden="true">
+        <div class="intro-actions">
+          <button id="startBtn" class="main-btn" type="button">
+            Open your letter 💌
+          </button>
+        </div>
+      </div>
+    </section>
 
-<div class="bg-grid"></div>
+    <section id="letterPage" class="screen hidden-screen">
+      <div class="card letter-card">
+        <header class="letter-header">
+          <p class="tiny-label">💬 Opening Line</p>
+          <h2 class="opening-title">Hi you…</h2>
+          <p class="opening-text">
+            and no, you’re not allowed to speedrun this 😤
+          </p>
+          <p class="opening-text">Take your time okay.</p>
+        </header>
 
-<div class="bg-stickers" id="bgStickers"></div>
+        <div class="divider"></div>
 
-</div>
+        <section class="toggles-section" aria-label="Interactive love letter toggles">
+          <article class="toggle-item">
+            <button
+              class="toggle-btn"
+              type="button"
+              onclick="toggleContent('toggle1', this)"
+              aria-expanded="false"
+              aria-controls="toggle1"
+            >
+              <span>Click this if it’s your birthday gurlll 😌</span>
+              <span class="toggle-icon">+</span>
+            </button>
+            <div class="toggle-content" id="toggle1">
+              <p>Okay good, at least you clicked the right one.</p>
+              <p>Happy Birthday, my favourite person 💙</p>
+            </div>
+          </article>
 
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
+          <article class="toggle-item">
+            <button
+              class="toggle-btn"
+              type="button"
+              onclick="toggleContent('toggle2', this)"
+              aria-expanded="false"
+              aria-controls="toggle2"
+            >
+              <span>Don’t click this seriously</span>
+              <span class="toggle-icon">+</span>
+            </button>
+            <div class="toggle-content" id="toggle2">
+              <p>You really never listen oneeee 😤</p>
+              <p>very bad girl.</p>
+              <p>…but it’s okay, I love that about you too 💙</p>
+            </div>
+          </article>
 
-<main class="shell">
+          <article class="toggle-item">
+            <button
+              class="toggle-btn"
+              type="button"
+              onclick="toggleContent('toggle3', this)"
+              aria-expanded="false"
+              aria-controls="toggle3"
+            >
+              <span>Okay this one you should read properly</span>
+              <span class="toggle-icon">+</span>
+            </button>
+            <div class="toggle-content" id="toggle3">
+              <p>I didn’t want to just write you a normal letter this time…</p>
+              <p>I wanted to make something you could go through, slowly.</p>
+              <p>Just like us.</p>
+              <p>
+                Soft, a little messy sometimes, but still my favourite thing.
+              </p>
+            </div>
+          </article>
 
-<!-- Intro / Title page -->
+          <article class="toggle-item">
+            <button
+              class="toggle-btn"
+              type="button"
+              onclick="toggleContent('toggle4', this)"
+              aria-expanded="false"
+              aria-controls="toggle4"
+            >
+              <span>Something I really want you to know 💌</span>
+              <span class="toggle-icon">+</span>
+            </button>
+            <div class="toggle-content" id="toggle4">
+              <p>I love you more than I can ever say or express.</p>
+              <p>
+                Honestly… you’re the best thing that has ever happened to me.
+                You make me the luckiest man alive.
+              </p>
+              <p>
+                I’ll always strive to make you happy and treat you the bestest—
+                just like how a princess should be treated 💙
+              </p>
+            </div>
+          </article>
 
-<section id="intro" class="card intro" aria-live="polite">
+          <article class="toggle-item language-item">
+            <div class="language-box">
+              <h3>💌 In every language, it’s still you</h3>
+              <ul class="language-list">
+                <li><strong>English 🇬🇧</strong><span>I love you</span></li>
+                <li><strong>Chinese 🇨🇳</strong><span>我爱你</span></li>
+                <li><strong>Japanese 🇯🇵</strong><span>愛してる</span></li>
+                <li><strong>French 🇫🇷</strong><span>Je t’aime</span></li>
+                <li><strong>Korean 🇰🇷</strong><span>사랑해</span></li>
+              </ul>
+            </div>
+          </article>
 
-<div class="sparkle" aria-hidden="true"></div>
+          <article class="toggle-item">
+            <button
+              class="toggle-btn"
+              type="button"
+              onclick="toggleContent('toggle5', this)"
+              aria-expanded="false"
+              aria-controls="toggle5"
+            >
+              <span>If you’re smiling right now… click this 😊</span>
+              <span class="toggle-icon">+</span>
+            </button>
+            <div class="toggle-content" id="toggle5">
+              <p>Good.</p>
+              <p>That’s all I wanted today.</p>
+            </div>
+          </article>
 
-<h1 class="title">For My Baby Girl &lt;3</h1>
+          <article class="toggle-item final-item">
+            <button
+              class="toggle-btn final-btn"
+              type="button"
+              onclick="toggleContent('toggle6', this)"
+              aria-expanded="false"
+              aria-controls="toggle6"
+            >
+              <span>Last one… promise 🎀</span>
+              <span class="toggle-icon">+</span>
+            </button>
+            <div class="toggle-content final-message" id="toggle6">
+              <p>No matter how many birthdays pass,</p>
+              <p>no matter where life takes us…</p>
+              <p>if I had to choose again,</p>
+              <p>I’d still choose you.</p>
+              <p>Every time.</p>
+              <p><strong>Happy Birthday, my girl 💙</strong></p>
+            </div>
+          </article>
+        </section>
 
-<p class="subtitle">Take your time and read this! DONT RUSHHHH</p>
+        <footer class="letter-footer">
+          <pre class="bunny">
+(\_/)
+( •.•)
+/&gt;❤️
+          </pre>
+        </footer>
+      </div>
+    </section>
+  </main>
 
-<div class="buttons">
-
-<button id="startBtn" class="btn primary">Okay okay I’ll read</button>
-
-<button id="tinyBtn" class="btn ghost" type="button" title="no speed running 😈">
-
-I’m not speed running…
-
-</button>
-
-</div>
-
-<p class="hint" id="speedHint">Tip: open each one slowly…</p>
-
-</section>
-
-<!-- Opening line page -->
-
-<section id="letter" class="card hidden">
-
-<header class="header">
-
-<h2 class="opening">Hi you…. Yes you… My Baby Gurlllll</h2>
-
-<p class="opening-sub">
-
-and no, you’re not allowed to speed run this if youre thinking about it 😈
-
-</p>
-
-</header>
-
-<div class="divider"></div>
-
-<section class="accordion" aria-label="Birthday letter sections">
-
-</section>
-
-<footer class="footer">
-
-Made with love — don’t rush 😈
-
-</footer>
-
-</section>
-
-</main>
-
-<canvas id="confetti" aria-hidden="true"></canvas>
-
-<script src="./script.js"></script>
-
+  <script src="./script.js"></script>
 </body>
-
 </html>
